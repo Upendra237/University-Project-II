@@ -1,0 +1,49 @@
+{
+  "resources": [
+    {
+      "id": 1,
+      "title": "Advanced Machine Learning Algorithms",
+      "author": "Dr. Sarah Johnson",
+      "type": "Research Paper",
+      "category": "Computer Science",
+      "year": 2023,
+      "department": "Computer Engineering",
+      "description": "A comprehensive study of modern machine learning algorithms and their applications in real-world scenarios.",
+      "tags": ["Machine Learning", "AI", "Algorithms"],
+      "file_path": "assets/pdfs/advanced-ml-algorithms.pdf",
+      "thumbnail": "assets/images/thumbnails/ml-thumb.jpg",
+      "views": 1250,
+      "downloads": 856,
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "title": "Sustainable Civil Engineering Practices",
+      "author": "Prof. Michael Chen",
+      "type": "Thesis",
+      "category": "Civil Engineering",
+      "year": 2023,
+      "department": "Civil Engineering",
+      "description": "Analysis of sustainable practices in modern civil engineering with focus on environmental impact.",
+      "tags": ["Sustainability", "Civil Engineering", "Environment"],
+      "file_path": "assets/pdfs/sustainable-civil.pdf",
+      "thumbnail": "assets/images/thumbnails/civil-thumb.jpg",
+      "views": 890,
+      "downloads": 654,
+      "rating": 4.8
+    }
+  ],
+  "categories": [
+    "Computer Science",
+    "Civil Engineering",
+    "Electrical Engineering",
+    "Mechanical Engineering",
+    "Electronics"
+  ],
+  "types": [
+    "Research Paper",
+    "Thesis",
+    "Book",
+    "Project Report"
+  ]
+}
