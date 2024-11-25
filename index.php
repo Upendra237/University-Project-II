@@ -177,7 +177,7 @@ include 'includes/header.php';
 <!-- Call to Action -->
 <section class="bg-primary text-white py-5">
     <div class="container text-center">
-        <h2>Start Exploring Today</h2>
+        <h2>Start Exploring Today and Tommorrow</h2>
         <p class="lead">Join our growing community of researchers and students</p>
         <button class="btn btn-light btn-lg">Get Started</button>
     </div>
