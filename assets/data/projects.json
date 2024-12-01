@@ -3,6 +3,7 @@
     "id": 1,
     "title": "Smart Agriculture Monitoring System",
     "description": "IoT-based system for monitoring soil moisture, temperature, and humidity in agricultural fields with automated irrigation control.",
+    "full_description": "This innovative Smart Agriculture Monitoring System revolutionizes traditional farming practices by implementing automated monitoring and control mechanisms. The system provides continuous real-time data about crucial environmental parameters and automates irrigation based on soil conditions. Our solution combines IoT technology with advanced sensor networks to optimize resource usage and improve crop yield while reducing manual intervention in farming operations. The system is designed to be energy-efficient and can operate in remote locations using solar power.",
     "project_type": "Project III",
     "semester": "7th",
     "department": "Computer Engineering",
@@ -22,54 +23,173 @@
       "React",
       "Node.js",
       "MongoDB"
-    ]
+    ],
+    "project_stats": {
+      "lines_of_code": "15,000+",
+      "api_endpoints": "24",
+      "database_collections": "8",
+      "test_coverage": "85%",
+      "deployment_time": "2 weeks",
+      "active_users": "100+"
+    },
+    
+    "architecture_details": {
+      "diagram_url": "architecture-diagram.png",
+      "components": [
+        {
+          "name": "Mobile App Layer",
+          "description": "React Native app for user interface"
+        },
+        {
+          "name": "API Layer",
+          "description": "RESTful services using Express.js"
+        },
+        {
+          "name": "Data Layer",
+          "description": "MongoDB for data persistence"
+        }
+      ]
+    },
+  
+    "key_features": [
+      "Real-time monitoring of soil moisture, temperature, and humidity",
+      "Automated irrigation system with smart scheduling",
+      "Mobile app for remote monitoring and control",
+      "Data analytics dashboard for trend analysis",
+      "Energy-efficient sensor network with solar power support",
+      "Automated alerts and notifications system",
+      "Historical data logging and analysis"
+    ],
+    "project_outcomes": {
+      "Water Savings": "40% reduction in water usage",
+      "Yield Improvement": "25% increase in crop yield",
+      "Cost Reduction": "35% reduction in labor costs",
+      "Monitoring Efficiency": "90% accuracy in soil condition monitoring"
+    },
+    "challenges_faced": [
+      "Power management in remote areas",
+      "Sensor calibration for accuracy",
+      "Network connectivity issues",
+      "Weather-proofing hardware components",
+      "Data synchronization in offline mode"
+    ],
+    "implementation_details": {
+      "hardware": [
+        "ESP32 microcontroller",
+        "Soil moisture sensors",
+        "DHT22 temperature & humidity sensors",
+        "Relay modules for irrigation control",
+        "Solar panels for power supply",
+        "12V Water pump",
+        "4G/LTE modem for connectivity"
+      ],
+      "software": [
+        "React Native mobile application",
+        "Node.js backend server",
+        "MongoDB database",
+        "MQTT protocol for communication",
+        "Express.js API framework",
+        "JWT authentication",
+        "Socket.io for real-time updates"
+      ]
+    },
+    "team_roles": {
+      "Ram Sharma": {
+        "role": "Team Leader & Hardware Engineer",
+        "responsibilities": [
+          "Project coordination",
+          "Hardware design",
+          "Sensor integration",
+          "System architecture"
+        ]
+      },
+      "Sita Thapa": {
+        "role": "Software Developer",
+        "responsibilities": [
+          "Mobile app development",
+          "Backend implementation",
+          "API integration",
+          "Database management"
+        ]
+      },
+      "Hari Bahadur": {
+        "role": "IoT Specialist",
+        "responsibilities": [
+          "Sensor network setup",
+          "Data analytics",
+          "System optimization",
+          "Testing & validation"
+        ]
+      }
+    },
+    "project_timeline": {
+      "start_date": "2023-01-15",
+      "end_date": "2023-05-30",
+      "milestones": [
+        {
+          "title": "Requirements Analysis",
+          "date": "2023-01-30"
+        },
+        {
+          "title": "Hardware Setup",
+          "date": "2023-02-28"
+        },
+        {
+          "title": "Software Development",
+          "date": "2023-04-15"
+        },
+        {
+          "title": "Testing & Integration",
+          "date": "2023-05-15"
+        }
+      ]
+    },
+    "awards_recognition": [
+      "Best Innovation Award - College Tech Fest 2023",
+      "Runner-up - National Agriculture Innovation Competition",
+      "Smart Farming Excellence Award - IEEE Student Branch"
+    ],
+    "media_gallery": {
+      "images": [
+        {
+          "url": "system-architecture.jpg",
+          "caption": "System Architecture Overview",
+          "category": "technical"
+        },
+        {
+          "url": "hero-img-1.jpg",
+          "caption": "Hardware Implementation",
+          "category": "implementation"
+        },
+        {
+          "url": "hero-img-2.jpg",
+          "caption": "Hardware Implementation",
+          "category": "implementation"
+        }
+      ],
+      "videos": [
+          {
+              "url": "demo-video.mp4",
+              "type": "file", 
+              "title": "Project Demo",
+              "thumbnail": "demo-thumbnail.jpg",
+              "duration": "5:30",
+              "description": "Complete walkthrough of the system"
+          },
+          {
+              "url": "https://www.youtube.com/watch?v=jM_qDSM2yuc",
+              "type": "embed",
+              "title": "Project Presentation",
+              "thumbnail": "waste-robot.jpg",
+              "duration": "15:45",
+              "description": "Technical presentation and results",
+              "platform": "youtube" 
+          }
+      ]
+    }
   },
   {
     "id": 2,
-    "title": "Voice Controlled Home Automation",
-    "description": "A system that allows users to control home appliances using voice commands with multi-language support.",
-    "project_type": "Project IV",
-    "semester": "8th",
-    "department": "Electronics Engineering",
-    "team_members": "Anita Rai, Bijay Tamang, Sameer Khan",
-    "supervisor": "Prof. Sarah Wilson",
-    "year": 2023,
-    "preview_image": "voice-automation.jpg",
-    "views": 890,
-    "downloads": 654,
-    "rating": 4.5,
-    "github_url": "https://github.com/example/voice-automation",
-    "demo_url": "https://demo.example.com/voice-automation",
-    "report_url": "assets/reports/voice-automation.pdf",
-    "technologies_used": [
-      "Raspberry Pi",
-      "Python",
-      "TensorFlow",
-      "Flutter"
-    ]
-  },
-  {
-    "id": 3,
-    "title": "Waste Segregation Robot",
-    "description": "Automated robot that uses computer vision to identify and segregate different types of waste materials.",
-    "project_type": "Project II",
-    "semester": "5th",
-    "department": "Electronics Engineering",
-    "team_members": "Krishna Poudel, Maya Gurung",
-    "supervisor": "Dr. Lisa Chen",
-    "year": 2023,
-    "preview_image": "waste-robot.jpg",
-    "views": 752,
-    "downloads": 423,
-    "rating": 4.7,
-    "github_url": "https://github.com/example/waste-robot",
-    "demo_url": null,
-    "report_url": "assets/reports/waste-robot.pdf",
-    "technologies_used": [
-      "ROS",
-      "OpenCV",
-      "Python",
-      "Arduino"
-    ]
+    "title": "Voice Controlled Home Automation"
   }
 ]

@@ -2,10 +2,8 @@
 $itemsPerPage = 9;
 $totalItems = count($filteredProjects);
 $totalPages = ceil($totalItems / $itemsPerPage);
-
 $currentPage = isset($_GET['page']) && is_numeric($_GET['page']) ? (int) $_GET['page'] : 1;
 $currentPage = max(1, min($currentPage, $totalPages));
-
 $offset = ($currentPage - 1) * $itemsPerPage;
 $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
 ?>
@@ -43,20 +41,27 @@ $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
                             </span>
                         </div>
 
-                        <!-- Overlay with Quick Actions -->
+                        <!-- Hover Overlay with Quick Actions -->
                         <div class="khec-project-hover-overlay">
-                            <div class="d-flex gap-2">
+                            <div class="d-flex flex-column gap-2">
                                 <?php if ($project['demo_url']): ?>
                                     <a href="<?php echo htmlspecialchars($project['demo_url']); ?>" 
                                        class="btn btn-primary btn-sm" target="_blank">
-                                        <i class="bi bi-play-circle"></i> Demo
+                                        <i class="bi bi-play-circle"></i> Live Demo
                                     </a>
                                 <?php endif; ?>
                                 
-                                <?php if ($project['report_url']): ?>
-                                    <a href="<?php echo htmlspecialchars($project['report_url']); ?>" 
-                                       class="btn btn-light btn-sm">
-                                        <i class="bi bi-eye"></i> View Report
+                                <button class="btn btn-light btn-sm view-project"
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#projectViewModal"
+                                        data-project-id="<?php echo $project['id']; ?>">
+                                    <i class="bi bi-eye"></i> View Report
+                                </button>
+
+                                <?php if ($project['github_url']): ?>
+                                    <a href="<?php echo htmlspecialchars($project['github_url']); ?>" 
+                                       class="btn btn-dark btn-sm" target="_blank">
+                                        <i class="bi bi-github"></i> View Code
                                     </a>
                                 <?php endif; ?>
                             </div>
@@ -64,15 +69,12 @@ $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
                     </div>
 
                     <div class="card-body">
-                        <!-- Department Badge -->
-                        <div class="mb-2">
-                            <span class="badge bg-info">
-                                <?php echo htmlspecialchars($project['department']); ?>
-                            </span>
-                        </div>
-
                         <!-- Project Title -->
-                        <h5 class="card-title">
+                        <h5 class="card-title project-title" 
+                            style="cursor: pointer;"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#projectViewModal"
+                            data-project-id="<?php echo $project['id']; ?>">
                             <?php echo htmlspecialchars($project['title']); ?>
                         </h5>
 
@@ -97,7 +99,18 @@ $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
                             </small>
                         </div>
 
-                        <!-- Views and Downloads -->
+                        <!-- Technologies Used -->
+                        <div class="mb-3">
+                            <div class="d-flex flex-wrap gap-1">
+                                <?php foreach ($project['technologies_used'] as $tech): ?>
+                                    <span class="badge bg-light text-dark">
+                                        <?php echo htmlspecialchars($tech); ?>
+                                    </span>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+
+                        <!-- Project Stats -->
                         <div class="d-flex justify-content-between align-items-center mt-3">
                             <small class="text-muted">
                                 <i class="bi bi-eye"></i> <?php echo number_format($project['views']); ?> views
@@ -113,21 +126,9 @@ $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
                             <small class="text-muted">
                                 <?php echo $project['semester']; ?> Semester | <?php echo $project['year']; ?>
                             </small>
-                            <div>
-                                <?php if ($project['github_url']): ?>
-                                    <a href="<?php echo htmlspecialchars($project['github_url']); ?>" 
-                                    class="btn btn-outline-dark" 
-                                    target="_blank">
-                                        <i class="bi bi-github"></i>
-                                    </a>
-                                <?php endif; ?>
-                                <?php if ($project['report_url']): ?>
-                                    <a href="<?php echo htmlspecialchars($project['report_url']); ?>" 
-                                    class="btn btn-outline-primary">
-                                        <i class="bi bi-file-pdf"></i>
-                                    </a>
-                                <?php endif; ?>
-                            </div>
+                            <small class="text-muted">
+                                <?php echo htmlspecialchars($project['department']); ?>
+                            </small>
                         </div>
                     </div>
                 </div>
@@ -141,7 +142,8 @@ $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
                     <ul class="pagination justify-content-center">
                         <?php if ($currentPage > 1): ?>
                             <li class="page-item">
-                                <a class="page-link" href="?page=<?php echo $currentPage - 1; ?><?php echo $searchQuery ? '&search=' . urlencode($searchQuery) : ''; ?>">
+                                <a class="page-link" href="?page=<?php echo $currentPage - 1; ?>
+                                   <?php echo $searchQuery ? '&search=' . urlencode($searchQuery) : ''; ?>">
                                     Previous
                                 </a>
                             </li>
@@ -149,7 +151,8 @@ $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
 
                         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                             <li class="page-item <?php echo ($i == $currentPage) ? 'active' : ''; ?>">
-                                <a class="page-link" href="?page=<?php echo $i; ?><?php echo $searchQuery ? '&search=' . urlencode($searchQuery) : ''; ?>">
+                                <a class="page-link" href="?page=<?php echo $i; ?>
+                                   <?php echo $searchQuery ? '&search=' . urlencode($searchQuery) : ''; ?>">
                                     <?php echo $i; ?>
                                 </a>
                             </li>
@@ -157,7 +160,8 @@ $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
 
                         <?php if ($currentPage < $totalPages): ?>
                             <li class="page-item">
-                                <a class="page-link" href="?page=<?php echo $currentPage + 1; ?><?php echo $searchQuery ? '&search=' . urlencode($searchQuery) : ''; ?>">
+                                <a class="page-link" href="?page=<?php echo $currentPage + 1; ?>
+                                   <?php echo $searchQuery ? '&search=' . urlencode($searchQuery) : ''; ?>">
                                     Next
                                 </a>
                             </li>
@@ -168,3 +172,17 @@ $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
         <?php endif; ?>
     <?php endif; ?>
 </div>
+
+<!-- Include the modal template -->
+<?php include 'includes/pages/projects/project-view.php'; ?>
+
+<!-- Include the project scripts -->
+<script src="assets/js/project.js"></script>
+
+<!-- Initialize the projects data -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Pass the PHP data to the JavaScript
+    initializeProjects(<?php echo json_encode($filteredProjects); ?>);
+});
+</script>

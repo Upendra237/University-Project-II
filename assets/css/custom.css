@@ -418,15 +418,21 @@ footer {
 
 /************* Project Cards Styling *******************/
 /* Core Project Card Styles */
-.khec-project-card {
+.khec-project-card, .gallery-item {
     border: none;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
-    animation: fadeInUp 0.5s ease-out;
     margin-bottom: 1rem;
 }
 
-.khec-project-card:hover {
+.khec-project-card {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.khec-project-card:hover,
+.gallery-item:hover,
+.team-member-card:hover,
+.stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
@@ -490,9 +496,206 @@ footer {
     padding: 0.625rem 1rem;
 }
 
-/* Project-specific Mobile Styles */
+/* Project Modal Header Styles */
+.project-modal-header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+    min-height: 200px;
+}
+
+.project-header-bg {
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    opacity: 0.5;
+}
+
+/* Navigation Styles */
+.modal-navigation {
+    padding: 1rem;
+    z-index: 1020;
+}
+
+.modal-navigation .nav-link {
+    color: #6c757d;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.modal-navigation .nav-link:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+}
+
+.modal-navigation .nav-link.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Badge and Tag Styles */
+.project-tags .badge {
+    font-size: 0.8rem;
+    padding: 0.5em 1em;
+    margin-right: 0.5rem;
+}
+
+/* Timeline Styles */
+.timeline-item {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+    border-left: 2px solid #dee2e6;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #0d6efd;
+    border: 2px solid white;
+}
+
+.timeline-item:last-child {
+    border-left: none;
+}
+
+.timeline-date {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+/* Team Member Cards */
+.team-member-card {
+    transition: transform 0.3s ease;
+}
+
+.team-member-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* Gallery Styles */
+.gallery-item {
+    cursor: pointer;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-caption {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+/* Tech Stack Styles */
+.tech-pill {
+    background: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    display: inline-block;
+    margin: 0.25rem;
+    font-size: 0.875rem;
+    color: #495057;
+    transition: all 0.3s ease;
+}
+
+.tech-pill:hover {
+    background: #0d6efd;
+    color: white;
+}
+
+/* Award Styles */
+.award-item {
+    padding: 1rem;
+    border-left: 4px solid #ffc107;
+    background: #fff8e5;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Stats Card Styles */
+.stat-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: none;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0d6efd;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Challenge Cards */
+.challenge-card {
+    border-left: 4px solid #0d6efd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+}
+
+.challenge-card .solution {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #dee2e6;
+}
+
+/* List Items */
+.list-group-item {
+    border-left: 3px solid #0d6efd;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* Video Elements */
+.video-thumbnail {
+    position: relative;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.play-button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+/* Project Sort */
+.khec-project-sort {
+    min-width: 140px;
+    height: 44px;
+}
+
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
-    /* Square action buttons for mobile */
     .khec-project-card .btn-outline-dark,
     .khec-project-card .btn-outline-primary {
         width: 44px;
@@ -519,8 +722,28 @@ footer {
     }
 }
 
-/* Project Sort Dropdown */
-.khec-project-sort {
-    min-width: 140px;
-    height: 44px;
+.video-container {
+    background: #000;
+    position: relative;
+    width: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    max-height: 70vh;
+}
+
+.ratio-16x9 {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.ratio-16x9 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }

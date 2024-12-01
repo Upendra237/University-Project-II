@@ -57,5 +57,6 @@
     
     <!-- Custom JavaScript -->
     <script src="/assets/js/script.js"></script>
+    <script src="assets/js/project.js"></script>
 </body>
 </html>
