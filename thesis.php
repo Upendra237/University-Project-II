@@ -1,198 +1,131 @@
 <?php
+$pageTitle = 'Thesis Papers - Pustak';
 include 'includes/header.php';
 
-if(isset($_POST['submit'])) {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $department = htmlspecialchars($_POST['department']);
-    $stakeholder = htmlspecialchars($_POST['stakeholder']);
-    $message = htmlspecialchars($_POST['message']);
-    
-    // Email configuration
-    $to = "info@khec.edu.np";
-    $subject = "New Contact Form Submission";
-    $headers = "From: " . $email;
-    
-    $success = "Your message has been sent successfully!";
+// Load the thesis data from the JSON file
+$thesisData = json_decode(file_get_contents('assets/data/thesis.json'), true);
+
+// Get filter parameters
+$searchQuery = isset($_GET['search']) ? $_GET['search'] : '';
+$sortBy = isset($_GET['sort']) ? $_GET['sort'] : 'default';
+$selectedDepartment = isset($_GET['department']) ? $_GET['department'] : '';
+$selectedYear = isset($_GET['year']) ? $_GET['year'] : '';
+$selectedAuthor = isset($_GET['author']) ? $_GET['author'] : '';
+$selectedKeywords = isset($_GET['keywords']) ? (array)$_GET['keywords'] : [];
+$minRating = isset($_GET['min_rating']) ? floatval($_GET['min_rating']) : 0;
+$maxRating = isset($_GET['max_rating']) ? floatval($_GET['max_rating']) : 5;
+$displayType = isset($_GET['display']) ? $_GET['display'] : 'landscape';
+
+// Prepare filter data
+$departments = array_unique(array_column($thesisData, 'department'));
+$years = array_unique(array_column($thesisData, 'year'));
+rsort($years);
+$authors = array_unique(array_column($thesisData, 'author'));
+sort($authors);
+
+$allKeywords = [];
+foreach ($thesisData as $thesis) {
+    $allKeywords = array_merge($allKeywords, $thesis['keywords']);
+}
+$allKeywords = array_unique($allKeywords);
+sort($allKeywords);
+
+// Filter thesis data
+$filteredThesis = array_filter($thesisData, function($thesis) use (
+    $searchQuery, $selectedDepartment, $selectedYear, 
+    $selectedAuthor, $selectedKeywords, $minRating, $maxRating
+) {
+    // Search query filter
+    if (!empty($searchQuery)) {
+        $searchText = strtolower($thesis['title'] . ' ' . $thesis['author'] . ' ' . 
+                     implode(' ', $thesis['keywords']) . ' ' . $thesis['description']);
+        if (stripos($searchText, strtolower($searchQuery)) === false) {
+            return false;
+        }
+    }
+
+    // Department filter
+    if (!empty($selectedDepartment) && $thesis['department'] !== $selectedDepartment) {
+        return false;
+    }
+
+    // Year filter
+    if (!empty($selectedYear) && $thesis['year'] != $selectedYear) {
+        return false;
+    }
+
+    // Author filter
+    if (!empty($selectedAuthor) && $thesis['author'] !== $selectedAuthor) {
+        return false;
+    }
+
+    // Keywords filter
+    if (!empty($selectedKeywords)) {
+        $hasKeyword = false;
+        foreach ($selectedKeywords as $keyword) {
+            if (in_array($keyword, $thesis['keywords'])) {
+                $hasKeyword = true;
+                break;
+            }
+        }
+        if (!$hasKeyword) {
+            return false;
+        }
+    }
+
+    // Rating range filter
+    if ($thesis['rating'] < $minRating || $thesis['rating'] > $maxRating) {
+        return false;
+    }
+
+    return true;
+});
+
+// Sort filtered results
+if (!empty($sortBy)) {
+    usort($filteredThesis, function($a, $b) use ($sortBy) {
+        switch ($sortBy) {
+            case 'title-asc':
+                return strcasecmp($a['title'], $b['title']);
+            case 'title-desc':
+                return strcasecmp($b['title'], $a['title']);
+            case 'author-asc':
+                return strcasecmp($a['author'], $b['author']);
+            case 'author-desc':
+                return strcasecmp($b['author'], $a['author']);
+            case 'year-desc':
+                return $b['year'] - $a['year'];
+            case 'year-asc':
+                return $a['year'] - $b['year'];
+            case 'downloads-desc':
+                return $b['downloads'] - $a['downloads'];
+            case 'rating-desc':
+                return $b['rating'] - $a['rating'];
+            default:
+                return 0;
+        }
+    });
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Khwopa Engineering College</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #003366;
-            --secondary-color: #666;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .contact-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-
-        .contact-info i {
-            color: var(--primary-color);
-            font-size: 24px;
-            margin-right: 10px;
-        }
-
-        .map-container {
-            height: 400px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .form-control {
-            border-radius: 5px;
-            padding: 12px;
-            margin-bottom: 20px;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-        }
-
-        .college-info {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: var(--primary-color);
-            margin-right: 15px;
-            font-size: 20px;
-        }
-
-        .success-message {
-            background-color: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="contact-container">
-        <?php if(isset($success)): ?>
-            <div class="success-message"><?php echo $success; ?></div>
-        <?php endif; ?>
-
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <div class="contact-card">
-                    <h3 class="mb-4">College Information</h3>
-                    
-                    <div class="college-info">
-                        <h4>Khwopa Engineering College</h4>
-                        <p>An Undertaking of Bhaktapur Municipality<br>
-                        Affiliated to Purbanchal University, Estd. 2001</p>
-                        <p class="text-muted fst-italic">Dedicated To Country & People</p>
-                    </div>
-
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> P.O. Box: 84, Libali, Bhaktapur - 8<br>
-                        Bagmati, Nepal</p>
-                        
-                        <p><i class="fas fa-phone"></i> +977-1-5122098, +977-1-5122094</p>
-                        
-                        <p><i class="fas fa-envelope"></i> info@khec.edu.np<br>
-                        khec.pu@gmail.com</p>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 mb-4">
-                <div class="contact-card">
-                    <h3 class="mb-4">Send us a Message</h3>
-                    <form action="" method="POST">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Full Name *</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address *</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="department" class="form-label">Department/Section</label>
-                            <select class="form-select" id="department" name="department">
-                                <option value="general">General</option>
-                                <option value="civil">Civil Engineering</option>
-                                <option value="computer">Computer Engineering</option>
-                                <option value="electronics">Electronics & Communication</option>
-                                <option value="architecture">Architecture</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="stakeholder" class="form-label">Stakeholder Type *</label>
-                            <select class="form-select" id="stakeholder" name="stakeholder" required>
-                                <option value="">Select Stakeholder Type</option>
-                                <option value="student">Student</option>
-                                <option value="parent">Parent</option>
-                                <option value="faculty">Faculty</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message *</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                        </div>
-
-                        <button type="submit" name="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
+<div class="container-fluid py-1">
+    <div class="row">
+        <!-- Left Sidebar with Advanced Search -->
+        <div class="col-lg-3">
+            <?php include 'includes/pages/thesis/advanced-search.php'; ?>
         </div>
 
-        <div class="contact-card map-container mb-4">
-            <!-- Replace src with actual Google Maps embed code -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.0237458894543!2d85.4262!3d27.6725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1acea47f4c2f%3A0x8f27c7a29f43b2e5!2sKhwopa%20Engineering%20College!5e0!3m2!1sen!2snp!4v1638347689087!5m2!1sen!2snp" 
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
+        <!-- Main Content Area -->
+        <div class="col-lg-9">
+            <?php include 'includes/pages/thesis/thesis-header.php'; ?>
+
+            <?php if ($displayType == 'landscape'): ?>
+                <?php include 'includes/pages/thesis/landscape-preview.php'; ?>
+            <?php elseif ($displayType == 'portrait'): ?>
+                <?php include 'includes/pages/thesis/portrait-preview.php'; ?>
+            <?php endif; ?>
         </div>
     </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>
