@@ -1,6 +1,4 @@
 <?php
-include 'includes/header.php';
-
 if(isset($_POST['submit'])) {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
@@ -8,10 +6,13 @@ if(isset($_POST['submit'])) {
     $stakeholder = htmlspecialchars($_POST['stakeholder']);
     $message = htmlspecialchars($_POST['message']);
     
-    // Email configuration
+    // Email configuration (replace with actual email handling)
     $to = "info@khec.edu.np";
     $subject = "New Contact Form Submission";
     $headers = "From: " . $email;
+    
+    // Send email (implement proper email handling)
+    // mail($to, $subject, $message, $headers);
     
     $success = "Your message has been sent successfully!";
 }
@@ -36,9 +37,16 @@ if(isset($_POST['submit'])) {
             background-color: #f8f9fa;
         }
 
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+
         .contact-container {
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
@@ -102,6 +110,12 @@ if(isset($_POST['submit'])) {
     </style>
 </head>
 <body>
+    <div class="header">
+        <div class="contact-container">
+            <h1 class="text-center mb-0">Contact Us</h1>
+        </div>
+    </div>
+
     <div class="contact-container">
         <?php if(isset($success)): ?>
             <div class="success-message"><?php echo $success; ?></div>
@@ -192,6 +206,35 @@ if(isset($_POST['submit'])) {
             </iframe>
         </div>
     </div>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="contact-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Home</a></li>
+                        <li><a href="#" class="text-light">About Us</a></li>
+                        <li><a href="#" class="text-light">Courses</a></li>
+                        <li><a href="#" class="text-light">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Khwopa Circle</h5>
+                    <ul class="list-unstyled">
+                        <li>KHWOPA COLLEGE OF ENGINEERING</li>
+                        <li>KHWOPA COLLEGE</li>
+                        <li>KHWOPA SECONDARY SCHOOL</li>
+                        <li>KHWOPA POLYTECHNIC INSTITUTE</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Khwopa Engineering College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
