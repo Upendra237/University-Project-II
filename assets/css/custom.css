@@ -19,6 +19,53 @@ footer {
     flex-shrink: 0;
 }
 
+/* Enhanced Navbar Styling */
+.navbar {
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.navbar-brand i {
+    font-size: 1.8rem;
+    vertical-align: middle;
+}
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.nav-link.active {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Mobile Navigation */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+    
+    .nav-link {
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+    }
+}
+
 /* Hero Carousel */
 .carousel-item {
     height: 600px;
@@ -369,3 +416,111 @@ footer {
     color: #6c757d;
 } 
 
+/************* Project Cards Styling *******************/
+/* Core Project Card Styles */
+.khec-project-card {
+    border: none;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease-out;
+    margin-bottom: 1rem;
+}
+
+.khec-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.khec-project-image {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: calc(0.375rem - 1px);
+    border-top-right-radius: calc(0.375rem - 1px);
+}
+
+.khec-project-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.khec-project-card:hover .khec-project-hover-overlay {
+    opacity: 1;
+}
+
+.khec-project-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Project Filter & Modal Styles */
+.khec-project-modal .modal-dialog {
+    margin: 1rem auto;
+    max-width: 400px;
+}
+
+.khec-project-modal .modal-content {
+    border-radius: 1rem;
+    border: none;
+}
+
+.khec-project-modal .modal-body {
+    padding: 1.5rem;
+}
+
+.khec-project-modal .form-control,
+.khec-project-modal .form-select {
+    height: 44px;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 0.625rem 1rem;
+}
+
+/* Project-specific Mobile Styles */
+@media (max-width: 768px) {
+    /* Square action buttons for mobile */
+    .khec-project-card .btn-outline-dark,
+    .khec-project-card .btn-outline-primary {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+    }
+
+    .khec-project-card .btn-outline-dark i,
+    .khec-project-card .btn-outline-primary i {
+        font-size: 1.25rem;
+    }
+
+    .khec-project-modal .modal-footer .btn {
+        min-width: 100px;
+        height: 44px;
+    }
+    
+    .khec-project-container {
+        padding-bottom: 70px;
+    }
+}
+
+/* Project Sort Dropdown */
+.khec-project-sort {
+    min-width: 140px;
+    height: 44px;
+}

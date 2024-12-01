@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "title": "Smart Agriculture Monitoring System",
+    "description": "IoT-based system for monitoring soil moisture, temperature, and humidity in agricultural fields with automated irrigation control.",
+    "project_type": "Project III",
+    "semester": "7th",
+    "department": "Computer Engineering",
+    "team_members": "Ram Sharma, Sita Thapa, Hari Bahadur",
+    "supervisor": "Dr. Rajesh Kumar",
+    "year": 2023,
+    "preview_image": "smart-agriculture.jpg",
+    "views": 1250,
+    "downloads": 856,
+    "rating": 4.8,
+    "github_url": "https://github.com/example/smart-agriculture",
+    "demo_url": "https://demo.example.com/smart-agriculture",
+    "report_url": "assets/reports/smart-agriculture.pdf",
+    "technologies_used": [
+      "Arduino",
+      "ESP32",
+      "React",
+      "Node.js",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Voice Controlled Home Automation",
+    "description": "A system that allows users to control home appliances using voice commands with multi-language support.",
+    "project_type": "Project IV",
+    "semester": "8th",
+    "department": "Electronics Engineering",
+    "team_members": "Anita Rai, Bijay Tamang, Sameer Khan",
+    "supervisor": "Prof. Sarah Wilson",
+    "year": 2023,
+    "preview_image": "voice-automation.jpg",
+    "views": 890,
+    "downloads": 654,
+    "rating": 4.5,
+    "github_url": "https://github.com/example/voice-automation",
+    "demo_url": "https://demo.example.com/voice-automation",
+    "report_url": "assets/reports/voice-automation.pdf",
+    "technologies_used": [
+      "Raspberry Pi",
+      "Python",
+      "TensorFlow",
+      "Flutter"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Waste Segregation Robot",
+    "description": "Automated robot that uses computer vision to identify and segregate different types of waste materials.",
+    "project_type": "Project II",
+    "semester": "5th",
+    "department": "Electronics Engineering",
+    "team_members": "Krishna Poudel, Maya Gurung",
+    "supervisor": "Dr. Lisa Chen",
+    "year": 2023,
+    "preview_image": "waste-robot.jpg",
+    "views": 752,
+    "downloads": 423,
+    "rating": 4.7,
+    "github_url": "https://github.com/example/waste-robot",
+    "demo_url": null,
+    "report_url": "assets/reports/waste-robot.pdf",
+    "technologies_used": [
+      "ROS",
+      "OpenCV",
+      "Python",
+      "Arduino"
+    ]
+  }
+]
