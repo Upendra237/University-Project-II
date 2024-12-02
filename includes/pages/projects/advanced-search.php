@@ -9,7 +9,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" name="search" 
                                value="<?php echo htmlspecialchars($searchQuery); ?>" 
-                               placeholder="Search projects, team members...">
+                               placeholder="Search projects...">
                         <button type="submit" class="btn btn-primary">
                             <i class="bi bi-search"></i>
                         </button>

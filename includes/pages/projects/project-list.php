@@ -99,7 +99,7 @@ $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
                             </small>
                         </div>
 
-                        <!-- Technologies Used -->
+                        <!-- Technologies Used
                         <div class="mb-3">
                             <div class="d-flex flex-wrap gap-1">
                                 <?php foreach ($project['technologies_used'] as $tech): ?>
@@ -108,7 +108,7 @@ $currentItems = array_slice($filteredProjects, $offset, $itemsPerPage);
                                     </span>
                                 <?php endforeach; ?>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Project Stats -->
                         <div class="d-flex justify-content-between align-items-center mt-3">
