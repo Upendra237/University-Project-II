@@ -1,0 +1,567 @@
+[
+  {
+    "id": 1,
+    "title": "Smart Agriculture Monitoring System",
+    "description": "IoT-based system for monitoring soil moisture, temperature, and humidity in agricultural fields with automated irrigation control.",
+    "full_description": "This innovative Smart Agriculture Monitoring System revolutionizes traditional farming practices by implementing automated monitoring and control mechanisms. The system provides continuous real-time data about crucial environmental parameters and automates irrigation based on soil conditions. Our solution combines IoT technology with advanced sensor networks to optimize resource usage and improve crop yield while reducing manual intervention in farming operations. The system is designed to be energy-efficient and can operate in remote locations using solar power.",
+    "project_type": "Project III",
+    "semester": "7th",
+    "department": "Computer Engineering",
+    "team_members": "Ram Sharma, Sita Thapa, Hari Bahadur",
+    "supervisor": "Dr. Rajesh Kumar",
+    "year": 2023,
+    "preview_image": "smart-agriculture.jpg",
+    "views": 1250,
+    "downloads": 856,
+    "rating": 4.8,
+    "github_url": "https://github.com/example/smart-agriculture",
+    "demo_url": "https://demo.example.com/smart-agriculture",
+    "report_url": "assets/reports/smart-agriculture.pdf",
+    "technologies_used": [
+      "Arduino",
+      "ESP32",
+      "React",
+      "Node.js",
+      "MongoDB"
+    ],
+    "project_stats": {
+      "lines_of_code": "15,000+",
+      "api_endpoints": "24",
+      "database_collections": "8",
+      "test_coverage": "85%",
+      "deployment_time": "2 weeks",
+      "active_users": "100+"
+    },
+    
+    "architecture_details": {
+      "diagram_url": "architecture-diagram.png",
+      "components": [
+        {
+          "name": "Mobile App Layer",
+          "description": "React Native app for user interface"
+        },
+        {
+          "name": "API Layer",
+          "description": "RESTful services using Express.js"
+        },
+        {
+          "name": "Data Layer",
+          "description": "MongoDB for data persistence"
+        }
+      ]
+    },
+  
+    "key_features": [
+      "Real-time monitoring of soil moisture, temperature, and humidity",
+      "Automated irrigation system with smart scheduling",
+      "Mobile app for remote monitoring and control",
+      "Data analytics dashboard for trend analysis",
+      "Energy-efficient sensor network with solar power support",
+      "Automated alerts and notifications system",
+      "Historical data logging and analysis"
+    ],
+    "project_outcomes": {
+      "Water Savings": "40% reduction in water usage",
+      "Yield Improvement": "25% increase in crop yield",
+      "Cost Reduction": "35% reduction in labor costs",
+      "Monitoring Efficiency": "90% accuracy in soil condition monitoring"
+    },
+    "challenges_faced": [
+      "Power management in remote areas",
+      "Sensor calibration for accuracy",
+      "Network connectivity issues",
+      "Weather-proofing hardware components",
+      "Data synchronization in offline mode"
+    ],
+    "implementation_details": {
+      "hardware": [
+        "ESP32 microcontroller",
+        "Soil moisture sensors",
+        "DHT22 temperature & humidity sensors",
+        "Relay modules for irrigation control",
+        "Solar panels for power supply",
+        "12V Water pump",
+        "4G/LTE modem for connectivity"
+      ],
+      "software": [
+        "React Native mobile application",
+        "Node.js backend server",
+        "MongoDB database",
+        "MQTT protocol for communication",
+        "Express.js API framework",
+        "JWT authentication",
+        "Socket.io for real-time updates"
+      ]
+    },
+    "team_roles": {
+      "Ram Sharma": {
+        "role": "Team Leader & Hardware Engineer",
+        "responsibilities": [
+          "Project coordination",
+          "Hardware design",
+          "Sensor integration",
+          "System architecture"
+        ]
+      },
+      "Sita Thapa": {
+        "role": "Software Developer",
+        "responsibilities": [
+          "Mobile app development",
+          "Backend implementation",
+          "API integration",
+          "Database management"
+        ]
+      },
+      "Hari Bahadur": {
+        "role": "IoT Specialist",
+        "responsibilities": [
+          "Sensor network setup",
+          "Data analytics",
+          "System optimization",
+          "Testing & validation"
+        ]
+      }
+    },
+    "project_timeline": {
+      "start_date": "2023-01-15",
+      "end_date": "2023-05-30",
+      "milestones": [
+        {
+          "title": "Requirements Analysis",
+          "date": "2023-01-30"
+        },
+        {
+          "title": "Hardware Setup",
+          "date": "2023-02-28"
+        },
+        {
+          "title": "Software Development",
+          "date": "2023-04-15"
+        },
+        {
+          "title": "Testing & Integration",
+          "date": "2023-05-15"
+        }
+      ]
+    },
+    "awards_recognition": [
+      "Best Innovation Award - College Tech Fest 2023",
+      "Runner-up - National Agriculture Innovation Competition",
+      "Smart Farming Excellence Award - IEEE Student Branch"
+    ],
+    "media_gallery": {
+      "images": [
+        {
+          "url": "system-architecture.jpg",
+          "caption": "System Architecture Overview",
+          "category": "technical"
+        },
+        {
+          "url": "hero-img-1.jpg",
+          "caption": "Hardware Implementation",
+          "category": "implementation"
+        },
+        {
+          "url": "hero-img-2.jpg",
+          "caption": "Hardware Implementation",
+          "category": "implementation"
+        }
+      ],
+      "videos": [
+          {
+              "url": "demo-video.mp4",
+              "type": "file", 
+              "title": "Project Demo",
+              "thumbnail": "demo-thumbnail.jpg",
+              "duration": "5:30",
+              "description": "Complete walkthrough of the system"
+          },
+          {
+              "url": "https://www.youtube.com/watch?v=jM_qDSM2yuc",
+              "type": "embed",
+              "title": "Project Presentation",
+              "thumbnail": "waste-robot.jpg",
+              "duration": "15:45",
+              "description": "Technical presentation and results",
+              "platform": "youtube" 
+          }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Voice Controlled Home Automation",
+    "description": "Smart home automation system with voice control capabilities using AI and IoT technologies.",
+    "full_description": "A comprehensive home automation system that integrates voice control with smart device management. This project combines natural language processing with IoT technology to provide intuitive control over home appliances. The system supports multiple voice commands in different languages and can be customized for specific user needs while maintaining high security standards.",
+    "project_type": "Project IV",
+    "semester": "8th",
+    "department": "Computer Engineering",
+    "team_members": "Maya Patel, Suraj Kumar, Priya Singh",
+    "supervisor": "Dr. Sarah Johnson",
+    "year": 2023,
+    "preview_image": "voice-automation.jpg",
+    "views": 980,
+    "downloads": 645,
+    "rating": 4.6,
+    "github_url": "https://github.com/example/voice-automation",
+    "demo_url": "https://demo.example.com/voice-automation",
+    "report_url": "assets/reports/voice-automation.pdf",
+    "technologies_used": [
+      "Raspberry Pi",
+      "Python",
+      "TensorFlow",
+      "Node-RED",
+      "MQTT",
+      "Google Assistant API",
+      "AWS IoT"
+    ],
+    "project_stats": {
+      "lines_of_code": "12,000+",
+      "supported_commands": "50+",
+      "connected_devices": "15",
+      "test_coverage": "90%",
+      "languages_supported": "3",
+      "active_users": "25+"
+    },
+    "key_features": [
+      "Multi-language voice command support",
+      "Real-time device status monitoring",
+      "Custom voice command creation",
+      "Automated scene control",
+      "Energy usage monitoring",
+      "Mobile app control backup",
+      "Secure authentication system"
+    ],
+    "project_outcomes": {
+      "Command Accuracy": "95% recognition rate",
+      "Response Time": "Under 1 second",
+      "Energy Savings": "30% reduction",
+      "User Satisfaction": "92% approval rating"
+    },
+    "challenges_faced": [
+      "Voice recognition in noisy environments",
+      "Device compatibility issues",
+      "Network latency optimization",
+      "Security implementation",
+      "Power backup solutions"
+    ],
+    "implementation_details": {
+      "hardware": [
+        "Raspberry Pi 4",
+        "ESP32 Microcontrollers",
+        "Smart Relays",
+        "USB Microphone Array",
+        "LED Indicators",
+        "Touch Display"
+      ],
+      "software": [
+        "Python Backend",
+        "TensorFlow Lite",
+        "Node-RED Dashboard",
+        "MQTT Broker",
+        "React Native App",
+        "SQLite Database"
+      ]
+    },
+    "team_roles": {
+      "Maya Patel": {
+        "role": "Team Leader & ML Engineer",
+        "responsibilities": [
+          "Project management",
+          "Voice recognition system",
+          "ML model training",
+          "System integration"
+        ]
+      },
+      "Suraj Kumar": {
+        "role": "IoT Developer",
+        "responsibilities": [
+          "Hardware integration",
+          "Device communication",
+          "Power management",
+          "Networking"
+        ]
+      },
+      "Priya Singh": {
+        "role": "Software Developer",
+        "responsibilities": [
+          "Mobile app development",
+          "UI/UX design",
+          "Testing",
+          "Documentation"
+        ]
+      }
+    },
+    "project_timeline": {
+      "start_date": "2023-02-01",
+      "end_date": "2023-06-15",
+      "milestones": [
+        {
+          "title": "System Design",
+          "date": "2023-02-15"
+        },
+        {
+          "title": "Hardware Setup",
+          "date": "2023-03-30"
+        },
+        {
+          "title": "Software Integration",
+          "date": "2023-05-01"
+        },
+        {
+          "title": "Testing Phase",
+          "date": "2023-06-01"
+        }
+      ]
+    },
+    "awards_recognition": [
+      "Best Technical Innovation - University Level",
+      "Smart Home Excellence Award",
+      "IEEE Student Project Showcase Winner"
+    ],
+    "media_gallery": {
+      "images": [
+        {
+          "url": "voice-control-architecture.jpg",
+          "caption": "System Architecture",
+          "category": "technical"
+        },
+        {
+          "url": "hero-img-1.jpg",
+          "caption": "Voice Control Interface",
+          "category": "implementation"
+        },
+        {
+          "url": "hero-img-3.jpg",
+          "caption": "Mobile App Interface",
+          "category": "software"
+        }
+      ],
+      "videos": [
+        {
+          "url": "voice-demo.mp4",
+          "type": "file",
+          "title": "Voice Control Demo",
+          "thumbnail": "voice-thumbnail.jpg",
+          "duration": "4:45",
+          "description": "Demonstration of voice commands and system response"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          "type": "embed",
+          "title": "Project Walkthrough",
+          "thumbnail": "walkthrough-thumbnail.jpg",
+          "duration": "12:30",
+          "description": "Complete system walkthrough and features",
+          "platform": "youtube"
+        }
+      ]
+    },
+    "architecture_details": {
+      "diagram_url": "voice-architecture.png",
+      "components": [
+        {
+          "name": "Voice Processing Unit",
+          "description": "Handles voice recognition and command processing"
+        },
+        {
+          "name": "Device Control Layer",
+          "description": "Manages communication with smart devices"
+        },
+        {
+          "name": "Mobile Interface",
+          "description": "User control and monitoring app"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Waste Segregation Robot",
+    "description": "Automated waste segregation system using robotics and machine learning for efficient recycling.",
+    "full_description": "An innovative robotic system that automates the waste segregation process using computer vision and machine learning. The robot can identify and sort different types of waste materials with high accuracy, making recycling more efficient. The system includes a conveyor mechanism, multiple sorting bins, and real-time monitoring capabilities.",
+    "project_type": "Project IV",
+    "semester": "8th",
+    "department": "Computer Engineering",
+    "team_members": "Alex Kim, Raj Patel, Lisa Chen",
+    "supervisor": "Dr. Michael Brown",
+    "year": 2023,
+    "preview_image": "waste-robot.jpg",
+    "views": 1120,
+    "downloads": 734,
+    "rating": 4.7,
+    "github_url": "https://github.com/example/waste-robot",
+    "demo_url": "https://demo.example.com/waste-robot",
+    "report_url": "assets/reports/waste-segregation.pdf",
+    "technologies_used": [
+      "Raspberry Pi",
+      "OpenCV",
+      "Python",
+      "TensorFlow",
+      "Arduino",
+      "ROS",
+      "PyTorch"
+    ],
+    "project_stats": {
+      "lines_of_code": "18,000+",
+      "accuracy_rate": "95%",
+      "processing_speed": "2 items/sec",
+      "waste_types": "6",
+      "test_coverage": "88%",
+      "daily_capacity": "5000+ items"
+    },
+    "key_features": [
+      "Real-time waste classification",
+      "Automated sorting mechanism",
+      "Multiple material detection",
+      "Contamination detection",
+      "Performance analytics",
+      "Remote monitoring system",
+      "Adaptive learning capabilities"
+    ],
+    "project_outcomes": {
+      "Sorting Accuracy": "95% accuracy rate",
+      "Processing Speed": "2 items per second",
+      "Contamination Reduction": "60% improvement",
+      "Operating Efficiency": "85% uptime"
+    },
+    "challenges_faced": [
+      "Variable lighting conditions",
+      "Mixed material detection",
+      "Mechanical precision",
+      "Processing speed optimization",
+      "Contamination handling"
+    ],
+    "implementation_details": {
+      "hardware": [
+        "Raspberry Pi 4",
+        "Arduino Mega",
+        "Stepper Motors",
+        "HD Camera Module",
+        "Conveyor System",
+        "Servo Motors",
+        "Proximity Sensors"
+      ],
+      "software": [
+        "Python OpenCV",
+        "TensorFlow Model",
+        "ROS Framework",
+        "PyTorch CNN",
+        "Flask Backend",
+        "React Dashboard",
+        "SQLite Database"
+      ]
+    },
+    "team_roles": {
+      "Alex Kim": {
+        "role": "Team Leader & ML Engineer",
+        "responsibilities": [
+          "Project coordination",
+          "ML model development",
+          "Vision system design",
+          "Performance optimization"
+        ]
+      },
+      "Raj Patel": {
+        "role": "Robotics Engineer",
+        "responsibilities": [
+          "Mechanical design",
+          "Motor control",
+          "Sensor integration",
+          "System assembly"
+        ]
+      },
+      "Lisa Chen": {
+        "role": "Software Developer",
+        "responsibilities": [
+          "Computer vision",
+          "System integration",
+          "UI development",
+          "Testing automation"
+        ]
+      }
+    },
+    "project_timeline": {
+      "start_date": "2023-01-10",
+      "end_date": "2023-05-20",
+      "milestones": [
+        {
+          "title": "Design Phase",
+          "date": "2023-01-25"
+        },
+        {
+          "title": "Hardware Assembly",
+          "date": "2023-02-28"
+        },
+        {
+          "title": "Software Integration",
+          "date": "2023-04-15"
+        },
+        {
+          "title": "Testing & Optimization",
+          "date": "2023-05-10"
+        }
+      ]
+    },
+    "awards_recognition": [
+      "Environmental Innovation Award",
+      "Best Engineering Project 2023",
+      "Sustainability Excellence Recognition"
+    ],
+    "media_gallery": {
+      "images": [
+        {
+          "url": "robot-architecture.jpg",
+          "caption": "Robot System Architecture",
+          "category": "technical"
+        },
+        {
+          "url": "hero-img-2.jpg",
+          "caption": "Sorting Mechanism",
+          "category": "implementation"
+        },
+        {
+          "url": "hero-img-3.jpg",
+          "caption": "Control Interface",
+          "category": "software"
+        }
+      ],
+      "videos": [
+        {
+          "url": "robot-demo.mp4",
+          "type": "file",
+          "title": "Segregation Demo",
+          "thumbnail": "robot-thumbnail.jpg",
+          "duration": "6:15",
+          "description": "Demonstration of waste segregation process"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=ABC123XYZ",
+          "type": "embed",
+          "title": "Technical Overview",
+          "thumbnail": "overview-thumbnail.jpg",
+          "duration": "18:20",
+          "description": "Detailed technical explanation of the system",
+          "platform": "youtube"
+        }
+      ]
+    },
+    "architecture_details": {
+      "diagram_url": "robot-architecture.png",
+      "components": [
+        {
+          "name": "Vision System",
+          "description": "Computer vision and object detection"
+        },
+        {
+          "name": "Control System",
+          "description": "Robot movement and sorting control"
+        },
+        {
+          "name": "Monitoring Interface",
+          "description": "Performance tracking and analytics"
+        }
+      ]
+    }
+  }
+]
