@@ -1,0 +1,101 @@
+[
+  {
+    "title": "Thesis Papers",
+    "slug": "thesis",
+    "description": "Browse through a collection of student and faculty thesis papers.",
+    "image": "assets/images/collections/thesis.png",
+    "hasDedicatedPage": true,
+    "resources": [
+      {
+        "id": 1,
+        "title": "Machine Learning in IoT Applications",
+        "description": "A comprehensive study on implementing ML algorithms in IoT devices.",
+        "author": "Dr. John Doe",
+        "year": 2023,
+        "preview": "assets/images/thesis/sample-thesis.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Optimization Techniques for Renewable Energy Systems",
+        "description": "Explores novel approaches to improving the efficiency of renewable energy systems.",
+        "author": "Jane Smith, PhD",
+        "year": 2022,
+        "preview": "assets/images/thesis/renewable-energy.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Blockchain Applications in Supply Chain Management",
+        "description": "Investigates the potential of blockchain technology in modernizing supply chain processes.",
+        "author": "Alex Chen, MSc",
+        "year": 2021,
+        "preview": "assets/images/thesis/blockchain.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Research Papers",
+    "slug": "research-papers",
+    "description": "Explore the latest research papers from our faculty and guest contributors.",
+    "image": "assets/images/collections/research.jpg",
+    "hasDedicatedPage": false,
+    "resources": [
+      {
+        "id": 4,
+        "title": "Big Data Analytics for Smart Cities",
+        "description": "Analyzes the role of big data in improving urban infrastructure and services.",
+        "author": "Dr. Sarah Lee",
+        "year": 2023,
+        "preview": "assets/images/thesis/sample-thesis.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Advances in Renewable Energy Storage Technologies",
+        "description": "Compares the efficiency and feasibility of various energy storage solutions.",
+        "author": "John Doe, PhD",
+        "year": 2022,
+        "preview": "sample-research-2.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Cybersecurity Threats in Industrial IoT Environments",
+        "description": "Identifies and proposes countermeasures for securing industrial IoT networks.",
+        "author": "Jane Smith, MSc",
+        "year": 2021,
+        "preview": "sample-research-3.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Lab Reports",
+    "slug": "lab-reports",
+    "description": "Browse through experimental reports and lab findings from our research labs.",
+    "image": "assets/images/collections/lab.jpg",
+    "hasDedicatedPage": false,
+    "resources": [
+      {
+        "id": 7,
+        "title": "Evaluation of Additive Manufacturing Techniques",
+        "description": "Comparative analysis of different 3D printing methods and their applications.",
+        "author": "Dr. Alex Chen",
+        "year": 2023,
+        "preview": "sample-lab-1.jpg"
+      },
+      {
+        "id": 8,
+        "title": "Novel Catalysts for Hydrogen Production",
+        "description": "Investigates the use of new materials to improve the efficiency of hydrogen generation.",
+        "author": "Sarah Lee, PhD",
+        "year": 2022,
+        "preview": "sample-lab-2.jpg"
+      },
+      {
+        "id": 9,
+        "title": "Microfluidic Devices for Cell Culture Applications",
+        "description": "Explores the design and fabrication of microfluidic platforms for cell-based experiments.",
+        "author": "John Doe, MSc",
+        "year": 2021,
+        "preview": "sample-lab-3.jpg"
+      }
+    ]
+  }
+]

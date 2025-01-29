@@ -1,0 +1,153 @@
+/* Thesis Page Specific Styles */
+
+/* Thesis Description */
+.thesis-description {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* Thesis Card Styles */
+.thesis-card {
+    border: none;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.thesis-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* Card Preview Styles */
+.card-preview {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Portrait Preview Styles */
+.card-preview-portrait img {
+    border: 3px solid #cecece;
+    border-radius: 8px; 
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.thesis-card:hover .card-preview-portrait img {
+    border: 1px solid #686868;
+    transform: scale(1.05);
+}
+
+.thesis-card:hover .card-preview img {
+    transform: scale(1.05);
+}
+
+/* Preview Overlay */
+.preview-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.thesis-card:hover .preview-overlay {
+    opacity: 1;
+}
+
+.preview-overlay .badge {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.preview-overlay .btn {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.thesis-card:hover .preview-overlay .btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Card Body */
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Meta Information */
+.meta-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Advanced Search Styles */
+.list-group-item-action {
+    cursor: pointer;
+}
+
+.list-group-item-action:hover {
+    background-color: #f1f1f1;
+}
+
+/* Thesis Header Styles */
+.thesis-header {
+    background: linear-gradient(135deg, #007bff 20%, #0056b3 100%);
+}
+
+/* Rating Stars */
+.rating-stars {
+    font-size: 0.9rem;
+}
+
+.rating-stars .bi-star-fill {
+    color: #ffc107;
+}
+
+.rating-stars .bi-star {
+    color: #dee2e6;
+}
+
+/* Pagination Styles */
+.pagination {
+    margin-top: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .meta-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .card-preview {
+        height: 150px;
+    }
+}

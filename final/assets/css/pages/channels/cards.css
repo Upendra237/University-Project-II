@@ -1,0 +1,105 @@
+/* File: assets/css/pages/channels/cards.css */
+
+.channel-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.channel-card:hover {
+    transform: translateY(-5px);
+}
+
+.channel-card .card {
+    border: none;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.card-preview {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+}
+
+.card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder-preview {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    color: #adb5bd;
+    font-size: 2rem;
+}
+
+.card-badges {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.access-badge {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.channel-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Template-specific styles */
+.channel-card-gallery .card-preview {
+    background: #f1f5f9;
+}
+
+.channel-card-document .card-preview {
+    background: #fdf2f8;
+}
+
+.channel-card-video .card-preview {
+    background: #eff6ff;
+}
+
+.channel-card-book .card-preview {
+    background: #f0fdf4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .channel-card {
+        margin-bottom: 1rem;
+    }
+}
